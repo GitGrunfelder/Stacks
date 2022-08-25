@@ -84,7 +84,7 @@ class Queue:
             r = random.randint(0, max_time)
             time.sleep(r)
             person = person_queue.dequeue()
-            print(person + "@", time.asctime)
+            print(person)
             tix_sold.append(person)
         return tix_sold
     
