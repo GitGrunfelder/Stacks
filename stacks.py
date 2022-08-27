@@ -4,51 +4,51 @@ import random
 # A stack is much like a list, however you can only add and remove from the last item of the list. Think of it as LIFO(Last in first out)
 
 
-# class Stack:
-#     def __init__(self):
-#         self.items= []
+class Stack:
+    def __init__(self):
+        self.items= []
         
-#     def is_empty(self):
-#         return self.items == []
+    def is_empty(self):
+        return self.items == []
     
-#     def push(self,item):
-#         self.items.append(item)
+    def push(self,item):
+        self.items.append(item)
         
-#     def pop(self):
-#         return self.items.pop()
+    def pop(self):
+        return self.items.pop()
         
-#     def peek(self):
-#         last = len(self.items)-1
-#         return self.items[last]
+    def peek(self):
+        last = len(self.items)-1
+        return self.items[last]
     
-#     def size(self):
-#         return len(self.items)
+    def size(self):
+        return len(self.items)
     
-# stack = Stack()
-# print(stack.is_empty())
+stack = Stack()
+print(stack.is_empty())
 
-# stack.push(1)
-# print(stack.is_empty())
-# item = stack.pop()
-# print(item)
-# print(stack.is_empty())
+stack.push(1)
+print(stack.is_empty())
+item = stack.pop()
+print(item)
+print(stack.is_empty())
 
 
 # You can pass a string/sentence in via a for loop. For each character, push that character onto the stack.
 # Then you can reverse via for loop, adding each item in the len of the stack back in reverse order to a new var.
 
-# for char in "Hello":
-#     stack.push(char)
+for char in "Hello":
+    stack.push(char)
     
-# print(stack.size())
-# print(stack.peek())
+print(stack.size())
+print(stack.peek())
 
-# reverse = ""
+reverse = ""
 
-# for char in range(len(stack.items)):
-#     reverse += stack.pop()
+for char in range(len(stack.items)):
+    reverse += stack.pop()
     
-# print(reverse)
+print(reverse)
 
 #________________________QUEUE____________________
 # A queue is a lot like a stack, but think of it as FIFO
@@ -91,5 +91,51 @@ class Queue:
 queue = Queue()
 sold = queue.simulate_line(5, 1)
 print(sold)
+
+# Challenges
+# Reverse the string 'yesterday' using a stack.
+class Stack:
+    def __init__(self):
+        self.stack = []
+    
+    def push(self, word):
+        self.stack.append(word)
         
+    def pop(self):
+        return self.stack.pop()
+    
+example = Stack()
+
+for char in "yesterday":
+    example.push(char)
+print(example.stack)
+
+reversed = ""
+for char in range(len(example.stack)):
+    reversed += example.pop()
+
+print(reversed)
+
+class Stack:
+    def __init__(self):
+        self.items = []
+    
+    def push(self, item):
+        self.items.append(item)
+        
+    def pop(self):
+        return self.items.pop()
+    
+
+example2 = [1, 2, 3, 4, 5]
+in_order = Stack()
+reversed = []
+for item in example2:
+    in_order.items.append(item)
+print(in_order.items)
+
+for item in range(len(in_order.items)):
+    reversed.append(in_order.pop())
+
+print(reversed)
     
